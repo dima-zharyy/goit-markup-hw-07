@@ -1,38 +1,37 @@
 .process {
   padding-top: 0;
-}
 
-.process__title {
-  margin-bottom: 50px;
+  &__title {
+    margin-bottom: 50px;
+  }
 }
 
 .process-list {
   display: flex;
-}
 
-.process-list__item {
-  position: relative;
-}
+  &__item {
+    position: relative;
 
-.process-list__title {
-  position: absolute;
-  bottom: 0;
-  height: 70px;
-  width: 100%;
+    &:not(:nth-child(3n)) {
+      margin-right: 30px;
+    }
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &__title {
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
 
-  font-size: 14px;
-  line-height: 1.14;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
+    @include centered-flex;
 
-  background: rgba(47, 48, 58, 0.8);
-  color: $primary-white-color;
-}
+    font-size: 14px;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 
-.process-list__item:not(:nth-child(3n)) {
-  margin-right: 30px;
+    color: $primary-white-color;
+
+    background: rgba(47, 48, 58, 0.8);
+  }
 }
