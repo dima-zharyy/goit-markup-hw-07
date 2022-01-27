@@ -26,7 +26,6 @@
   display: block;
   width: 100%;
   height: 40px;
-
   padding-left: 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -35,7 +34,15 @@
 
   outline: none;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $transition-border;
+
+  &:focus {
+    border: 1px solid $accent-color;
+  }
+
+  &:focus + .form-modal__icon {
+    fill: $accent-color;
+  }
 }
 
 .field-wrap {
@@ -49,15 +56,7 @@
   left: 12px;
   transform: translateY(-50%);
   fill: #000000;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-modal__field:focus {
-  border: 1px solid $accent-color;
-}
-
-.form-modal__field:focus + .form-modal__icon {
-  fill: $accent-color;
+  transition: $transition-fill;
 }
 
 .form-modal__comment {
@@ -77,25 +76,23 @@
   resize: none;
   outline: none;
 
-  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: $transition-border;
 
-.form-modal__comment:focus {
-  border: 1px solid $accent-color;
-}
+  &:focus {
+    border: 1px solid $accent-color;
+  }
 
-.form-modal__comment::placeholder {
-  font-size: 12px;
-  line-height: 1.17;
-  letter-spacing: 0.01em;
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
 
-  color: rgba(117, 117, 117, 0.5);
+    color: rgba(117, 117, 117, 0.5);
+  }
 }
 
 .form-modal__license {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include centered-flex;
   margin-bottom: 30px;
 
   font-size: 14px;
@@ -115,14 +112,13 @@
 
   border: 2px solid $secondary-title-color;
   border-radius: 2px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
+  transition: $transition-background-color, $transition-border-color;
 
-.form-modal__checkbox:checked + .custom-checkbox {
-  border-color: transparent;
-  background-color: $accent-color;
-  background-origin: border-box;
+  .form-modal__checkbox:checked + & {
+    border-color: transparent;
+    background-color: $accent-color;
+    background-origin: border-box;
+  }
 }
 
 .form-modal__link {
@@ -137,6 +133,5 @@
 
 .form-modal__button {
   display: flex;
-  margin-left: auto;
-  margin-right: auto;
+  @include centered-margin;
 }

@@ -56,8 +56,8 @@ body {
 
 .container {
   width: 1200px;
-  margin-right: auto;
   margin-left: auto;
+  margin-right: auto;
   padding-right: 15px;
   padding-left: 15px;
 }
@@ -95,8 +95,7 @@ body {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.button:hover,
-.button:focus {
+.button:hover, .button:focus {
   background-color: #188ce8;
 }
 
@@ -119,11 +118,6 @@ body {
   visibility: hidden;
 }
 
-.backdrop--is-hidden .modal {
-  -webkit-transform: translate(-50%, -50%) scale(1.2);
-          transform: translate(-50%, -50%) scale(1.2);
-}
-
 .modal {
   position: absolute;
   top: 50%;
@@ -141,6 +135,11 @@ body {
   transition: -webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), -webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop--is-hidden .modal {
+  -webkit-transform: translate(-50%, -50%) scale(1.2);
+          transform: translate(-50%, -50%) scale(1.2);
 }
 
 .close-button {
@@ -166,8 +165,7 @@ body {
   fill: currentColor;
 }
 
-.close-button:hover,
-.close-button:focus {
+.close-button:hover, .close-button:focus {
   color: #2196f3;
 }
 
@@ -205,6 +203,14 @@ body {
   transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.form-modal__field:focus {
+  border: 1px solid #2196f3;
+}
+
+.form-modal__field:focus + .form-modal__icon {
+  fill: #2196f3;
+}
+
 .field-wrap {
   position: relative;
   margin-bottom: 10px;
@@ -219,14 +225,6 @@ body {
   fill: #000000;
   -webkit-transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.form-modal__field:focus {
-  border: 1px solid #2196f3;
-}
-
-.form-modal__field:focus + .form-modal__icon {
-  fill: #2196f3;
 }
 
 .form-modal__comment {
