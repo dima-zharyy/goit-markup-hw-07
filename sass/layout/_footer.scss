@@ -98,15 +98,15 @@
     color: $primary-white-color;
 
     transition: $transition-background-color;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-color;
+    }
   }
 
   &__icon {
     fill: currentColor;
-  }
-
-  &__link:hover,
-  &__link:focus {
-    background-color: $accent-color;
   }
 }
 
