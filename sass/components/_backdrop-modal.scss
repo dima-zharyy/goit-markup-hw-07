@@ -57,13 +57,13 @@
 
   transition: $transition-color;
 
-  &__icon {
-    @include centered-position;
-    fill: currentColor;
-  }
-
   &:hover,
   &:focus {
     color: $accent-color;
   }
+}
+
+.close-button__icon {
+  @include centered-position;
+  fill: currentColor;
 }

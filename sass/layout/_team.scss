@@ -1,77 +1,43 @@
-.team {
+.section--other-background {
   background-color: $secondary-background-color;
-
-  &__title {
-    margin-bottom: 50px;
-  }
 }
 
 .team-list {
   display: flex;
+}
 
-  &__item {
-    background-color: $primary-white-color;
-    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-      0px 2px 1px rgba(0, 0, 0, 0.2);
-    border-radius: 0px 0px 4px 4px;
+.team-list__item {
+  background-color: $primary-white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 
-    &:not(:nth-child(4n)) {
-      margin-right: 30px;
-    }
-  }
-
-  &__name {
-    margin-bottom: 10px;
-
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 1.19;
-    text-align: center;
-    letter-spacing: 0.03em;
-  }
-
-  &__position {
-    margin-bottom: 16px;
-
-    line-height: 19px;
-    text-align: center;
-    letter-spacing: 0.03em;
-
-    color: $secondary-text-color;
+  &:not(:nth-child(4n)) {
+    margin-right: 30px;
   }
 }
 
-.team-wrap {
+.team-list__title {
+  margin-bottom: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.team-list__text {
+  margin-bottom: 16px;
+
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $secondary-text-color;
+}
+
+.team-list__wrap {
   padding-top: 30px;
   padding-bottom: 30px;
-}
-
-.social-team {
-  display: flex;
-  justify-content: center;
-
-  &__item:not(:last-child) {
-    margin-right: 10px;
-  }
-
-  &__link {
-    @include centered-flex;
-    width: 44px;
-    height: 44px;
-    background-color: $primary-white-color;
-    border-radius: 50%;
-    color: #afb1b8;
-
-    transition: $transition-background-color, $transition-color;
-
-    &:hover,
-    &:focus {
-      background-color: $accent-color;
-      color: $primary-white-color;
-    }
-  }
-
-  &__icon {
-    fill: currentColor;
-  }
 }
